@@ -1,0 +1,33 @@
+{
+  "name": "1gocasino901",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pug": "pug src/pug/index.pug --out dist --pretty",
+    "scss": "sass src/scss/main.scss dist/style.css",
+    "build": "npm run pug && npm run scss",
+    "watch": "concurrently \"npm run pug:watch\" \"npm run scss:watch\" \"npm run serve\"",
+    "pug:watch": "pug src/pug/index.pug --out dist --pretty --watch",
+    "scss:watch": "sass --watch src/scss/main.scss dist/style.css",
+    "serve": "live-server dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EyosiSol/1Gocasino901.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/EyosiSol/1Gocasino901/issues"
+  },
+  "homepage": "https://github.com/EyosiSol/1Gocasino901#readme",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "live-server": "^1.2.2",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.86.3"
+  }
+}
