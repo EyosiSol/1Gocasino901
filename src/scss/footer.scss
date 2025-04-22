@@ -2,15 +2,17 @@ $hover: #d32f2f;
 $font-color: #6e6e70;
 $chevron-hover: #ed9f67;
 $font-lighter: #b3b2b2;
+$background-color: #181818;
+
 footer {
   width: 100%;
   padding: 2rem 2rem;
+  background-color: $background-color;
   .footer-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #121212;
     color: #fff;
     .socials {
       display: flex;
