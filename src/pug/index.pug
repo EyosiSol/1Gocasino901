@@ -2,8 +2,12 @@ extends layouts/main.pug
 
 block content
   include ./layouts/header.pug
-  h1 Hello from Pure Pug 👋
-  include ./layouts/ad.pug
-  include ./layouts/jackpot.pug
-  include ./layouts/footer.pug
+  section.contents 
+    section.middle
+        h1 Hello from Pure Pug 👋
+        include ./layouts/footer.pug
+    section.right  
+      include ./layouts/ad.pug
+      include ./layouts/jackpot.pug
+      include ./layouts/mobileApp.pug
 

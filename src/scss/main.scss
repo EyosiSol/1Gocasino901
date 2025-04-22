@@ -2,6 +2,7 @@
 @import "footer";
 @import "ad";
 @import "jackpot";
+@import "mobileApp";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,4 +14,22 @@ body {
   background: #121212;
   color: #fff;
   font-family: Lato, sans-serif;
+}
+
+.contents {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 1rem;
+  padding: 12px;
+
+  .middle {
+    grid-column: span 6 ;
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    grid-column: span 2;
+
+  }
 }
