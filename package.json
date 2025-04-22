@@ -7,10 +7,11 @@
     "pug": "pug src/pug/index.pug --out dist --pretty",
     "scss": "sass src/scss/main.scss dist/style.css",
     "build": "npm run pug && npm run scss",
-    "watch": "concurrently \"npm run pug:watch\" \"npm run scss:watch\" \"npm run serve\"",
     "pug:watch": "pug src/pug/index.pug --out dist --pretty --watch",
     "scss:watch": "sass --watch src/scss/main.scss dist/style.css",
-    "serve": "live-server dist"
+    "serve": "live-server dist",
+    "copy-assets": "cpx \"src/assets/**/*\" dist/assets",
+    "watch": " npm run build && concurrently \"npm run copy-assets\" \"npm run pug:watch\" \"npm run scss:watch\" \"npm run serve\""
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   "homepage": "https://github.com/EyosiSol/1Gocasino901#readme",
   "devDependencies": {
     "concurrently": "^9.1.2",
+    "cpx": "^1.5.0",
     "live-server": "^1.2.2",
     "pug-cli": "^1.0.0-alpha6",
     "sass": "^1.86.3"

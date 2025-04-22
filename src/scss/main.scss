@@ -1,6 +1,14 @@
+@import "header";
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
 body {
     background: #121212;
     color: #fff;
-    font-family: Arial, sans-serif;
-  }
-  
+    font-family: Lato, sans-serif;
+}

@@ -1,12 +1,22 @@
 // src/pug/layouts/header.pug
 header
-  nav
-    ul
-      li
-        a(href="#home") Home
-      li
-        a(href="#about") About
-      li
-        a(href="#services") Services
-      li
-        a(href="#contact") Contact
+  section 
+    .left
+        .logo
+           .hamburger 
+            img(src="/assets/BiMenu.svg", alt="menu", srcset="")
+            img(src="/assets/logo.svg", alt="1GOlogo") 
+        .pages
+            div 
+                img(src="/assets/", alt="", srcset="") Casino
+            div Live Casino
+            div Sports
+        .serachbar
+            img(src="/assets/icons/Search.svg", alt="", srcset="")
+            input(type="text", name="search" title="search" placeholder="Game or Provider")
+    .auth
+        button#login login 
+        button#sign  Sign Up
+
+
+
