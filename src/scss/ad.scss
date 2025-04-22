@@ -1,0 +1,30 @@
+$sign-button: #ff0000;
+
+.ad {
+  background: url("../assets/ad-banner.jpeg") no-repeat 50%;
+  background-size: cover;
+  width: 360px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border-radius: 20px;
+  z-index: 3;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 32px;
+  text-align: center;
+  button {
+    background-color: $sign-button;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: darken($sign-button, 10%);
+    }
+  }
+}
