@@ -20,16 +20,14 @@ body {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 1rem;
-  padding: 12px;
-
+  padding: 72px 12px 12px 12px;
   .middle {
-    grid-column: span 6 ;
+    grid-column: span 6;
   }
   .right {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     grid-column: span 2;
-
   }
 }
