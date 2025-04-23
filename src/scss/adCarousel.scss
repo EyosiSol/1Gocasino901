@@ -113,7 +113,7 @@ $sign-button: #ef4136;
       cursor: pointer;
 
       &:hover {
-        background-color: darken($sign-button, 10%);
+        background-color: $sign-button;
       }
     }
   }

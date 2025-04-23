@@ -1,0 +1,60 @@
+.jackpotGames {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  .upper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+  }
+
+  .jackpot-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 1.2rem;
+    padding: 20px 0; // Extra space for hover effects
+
+    .game-card {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 150px;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      position: relative; // Needed for z-index
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      h3 {
+        font-size: 14px;
+        text-align: center;
+        margin: 0;
+        transition: all 0.3s ease;
+      }
+
+      // Hover effects
+      &:hover {
+        transform: scale(1.1);
+        z-index: 10;
+
+        img {
+          transform: scale(1.05);
+        }
+
+        h3 {
+          opacity: 0;
+          height: 0;
+          margin: 0;
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,10 @@
+import {
+  gamesData,
+  renderGameCards,
+  uppderData,
+  renderCards,
+} from "./JackPot.js"; // named import
+
 // const data = [
 //   {
 //     id: 1,
@@ -145,4 +152,48 @@ setInterval(() => {
   updateSlidePosition();
 }, 2500);
 
+//Jackpot section
 
+console.log("jackpot data:", uppderData);
+const cardSection = document.querySelector(".upperCards");
+
+renderCards(uppderData, cardSection);
+
+const scrollContainer = document.querySelector(".upperCards");
+const scrollLeftBtn = document.querySelector(".scroll-left");
+const scrollRightBtn = document.querySelector(".scroll-right");
+
+// Scroll amount (adjust as needed)
+const scrollAmount = 300;
+
+scrollLeftBtn.addEventListener("click", () => {
+  scrollContainer.scrollBy({
+    left: -scrollAmount,
+    behavior: "smooth",
+  });
+});
+
+scrollRightBtn.addEventListener("click", () => {
+  scrollContainer.scrollBy({
+    left: scrollAmount,
+    behavior: "smooth",
+  });
+});
+
+// Optional: Hide buttons when at scroll extremes
+function updateButtonVisibility() {
+  scrollLeftBtn.style.display =
+    scrollContainer.scrollLeft <= 0 ? "none" : "flex";
+  scrollRightBtn.style.display =
+    scrollContainer.scrollLeft + scrollContainer.clientWidth >=
+    scrollContainer.scrollWidth
+      ? "none"
+      : "flex";
+}
+
+scrollContainer.addEventListener("scroll", updateButtonVisibility);
+updateButtonVisibility(); // Initial check
+
+const gamesSection = document.querySelector(".jackpot-content");
+
+renderGameCards(gamesData, gamesSection);

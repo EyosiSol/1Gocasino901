@@ -1,10 +1,13 @@
-@import "header";
-@import "footer";
-@import "ad";
-@import "jackpot";
-@import "mobileApp";
-@import "topCarousel";
-@import "adCarousel";
+@use "header";
+@use "footer";
+@use "ad";
+@use "jackpot";
+@use "mobileApp";
+@use "topCarousel";
+@use "adCarousel";
+@use "jackpotsection/jackpotvid";
+@use "jackpotsection/upperCard.scss";
+@use "jackpotsection/jackpotgames.scss";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,6 +28,16 @@ body {
   padding: 72px 12px 12px 12px;
   .middle {
     grid-column: span 6;
+    overflow-x: hidden;
+    padding: 0px 20px;
+    .jackpotmain {
+      position: relative;
+      background-color: #2c2c2e;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      border-radius: 16px;
+    }
   }
   .right {
     display: flex;

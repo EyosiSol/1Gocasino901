@@ -18,9 +18,8 @@ $background-color: #212123;
     font-size: 12px;
     color: $font-gray;
   }
-  h1{
+  h1 {
     font-size: 24px;
-    
   }
   button {
     background-color: $sign-button;
@@ -33,7 +32,7 @@ $background-color: #212123;
     border: none;
     cursor: pointer;
     &:hover {
-      background-color: darken($sign-button, 10%);
+      background-color: $sign-button;
     }
   }
 }
