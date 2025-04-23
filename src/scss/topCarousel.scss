@@ -6,13 +6,16 @@ $button-hover-color: #d32f2f;
 
 .carousel {
   width: 100%;
-  height: 55vh;
+  height: 48vh;
   position: relative;
+  border-radius: 20px;
   ul {
+    border-radius: 20px;
     margin: 0;
     padding: 0;
     list-style: none;
     .slide {
+      border-radius: 20px;
       padding: 20px 20px 80px 20px;
       position: absolute;
       inset: 0;
@@ -126,35 +129,6 @@ $button-hover-color: #d32f2f;
   .carousel-button.next {
     right: -0.1rem;
   }
-  //   .carousel-indicators {
-  //     position: absolute; // Add this
-  //     bottom: 20px; // Position at the bottom
-  //     left: 50%; // Center horizontally
-  //     transform: translateX(-50%); // Adjust for exact centering
-  //     display: flex;
-  //     gap: 0.5rem;
-  //     z-index: 10; // Higher than slides (which are z-index: 1)
-  //     background: rgba(0, 0, 0, 0.3); // Optional: better visibility
-  //     padding: 8px; // Optional: spacing around dots
-  //     border-radius: 12px; // Optional: rounded background
-  //     .indicator {
-  //       width: 6px;
-  //       height: 6px;
-  //       background: #555;
-  //       border-radius: 5px;
-  //       overflow: hidden;
-  //       cursor: pointer;
-  //       .indicator-fill {
-  //         background: red;
-  //         height: 100%;
-  //         width: 0%;
-  //         &.active {
-  //           width: 20px;
-  //           width: 100%;
-  //         }
-  //       }
-  //     }
-  //   }
   .carousel-indicators {
     position: absolute;
     bottom: 30px;
