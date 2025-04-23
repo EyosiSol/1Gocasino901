@@ -3,10 +3,12 @@
 $top-font-color: #6e6e70;
 $button: #ef4136;
 $button-hover-color: #d32f2f;
+$buttons-hover: #373738;
+$page-svg: #ed9f67;
 
 .carousel {
   width: 100%;
-  height: 48vh;
+  height: 50vh;
   position: relative;
   border-radius: 20px;
   ul {
@@ -16,7 +18,7 @@ $button-hover-color: #d32f2f;
     list-style: none;
     .slide {
       border-radius: 20px;
-      padding: 20px 20px 80px 20px;
+      padding: 20px 20px 80px 40px;
       position: absolute;
       inset: 0;
       opacity: 0;
@@ -105,21 +107,25 @@ $button-hover-color: #d32f2f;
   .carousel-button {
     position: absolute;
     z-index: 2;
-    background: none;
-    border: none;
-    font-size: 4rem;
+    background: $buttons-hover;
+    padding: 0.3rem;
     top: 50%;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
     transform: translateY(-50%);
-    color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     border-radius: 0.25rem;
-    padding: 0 0.5rem;
-    background-color: rgba(0, 0, 0, 0.1);
-    &:hover,
-    &:foucs {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 100%;
+    svg {
+      path {
+        fill: $page-svg;
+      }
+    }
+    &:hover {
       color: white;
-      background-color: rgba(0, 0, 0, 0.2);
-      outline: 1px solid black;
+      background-color: rgba(55, 55, 56, 0.8);
     }
   }
   .carousel-button.prev {
