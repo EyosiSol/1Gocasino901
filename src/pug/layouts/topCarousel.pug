@@ -1,0 +1,62 @@
+section.top-carousel(aria-label="Newest Photos") 
+    .carousel(data-carousel)
+        button.prev.carousel-button(title="Previous"    data-carousel-button="prev")
+            svg(width='24' height='24' viewbox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M6.64653 3.14648L3.79303 5.99998L6.64653 8.85348L7.35353 8.14648L5.20703 5.99998L7.35353 3.85348L6.64653 3.14648Z' fill='white')
+        button.next.carousel-button(title="Next" data-carousel-button="next")
+            svg(width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M14.276 23.6093L21.8853 16L14.276 8.39062L12.3906 10.276L18.1146 16L12.3906 21.724L14.276 23.6093Z" fill="white")
+        ul(data-slides)
+            li.first.slide(data-active)
+                div.top-items
+                    ol.top-carousel__item-top Sports
+                    ol.top-carousel__item-title SPORTS BETTING
+                .bottom-items 
+                    ol.top-carousel__item-middle Bonuses, Promotions,Live  Broadcasts
+                    button.top-carousel__item-button To Sportsbook
+            li.second.slide()
+                div.top-items
+                    ol.top-carousel__item-top Casino Bonus
+                    ol.top-carousel__item-title UP TO 300$
+                .bottom-items
+                    ol.top-carousel__item-middle For Your First Deposit
+                    button.top-carousel__item-button Claim Now
+            li.thrid.slide()
+                div.top-items
+                    ol.top-carousel__item-top Sports Bonus
+                    ol.top-carousel__item-title 
+                        | WELCOME BONUS 
+                        br
+                        |GET UP TO 100$
+                .bottom-items
+                    ol.top-carousel__item-middle For sports betting
+                    button.top-carousel__item-button Claim Now
+            li.fourth.slide()
+                div.top-items
+                    ol.top-carousel__item-top Promotion
+                    ol.top-carousel__item-title 
+                        |$810 000 &amp; UP 
+                        br
+                        |BGAMING DROPS 
+                        br
+                        |JOIN FRENZY
+                .bottom-items
+                    ol.top-carousel__item-middle
+                    button.top-carousel__item-button Learn More
+            li.fifth.slide()
+                div.top-items
+                    ol.top-carousel__item-top Promotion
+                    ol.top-carousel__item-title 
+                        |$24 000 000 
+                        br
+                        |DROPS &amp; WINS 
+                        br
+                        | SLOTS
+                .bottom-items
+                    ol.top-carousel__item-middle
+                    button.top-carousel__item-button Play Now
+        div.carousel-indicators
+            each val, index in [1,2,3,4,5]
+                div.indicator(class=(index === 0 ? "active" : ""), data-slide-to=index)
+                    div.indicator-fill(class=(index === 0 ? "active" : ""))
+

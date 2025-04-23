@@ -10,8 +10,9 @@
     "pug:watch": "pug src/pug/index.pug --out dist --pretty --watch",
     "scss:watch": "sass --watch src/scss/main.scss dist/style.css",
     "serve": "live-server dist",
+    "copy-js": "cpx \"src/js/**/*\" dist/main.js",
     "copy-assets": "cpx \"src/assets/**/*\" dist/assets",
-    "watch": " npm run build && concurrently \"npm run copy-assets\" \"npm run pug:watch\" \"npm run scss:watch\" \"npm run serve\""
+    "watch": " npm run build && concurrently \"npm run copy-assets\" \"npm run copy-js\" \"npm run pug:watch\" \"npm run scss:watch\" \"npm run serve\""
   },
   "repository": {
     "type": "git",
