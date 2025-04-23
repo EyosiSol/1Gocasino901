@@ -116,3 +116,37 @@ setInterval(() => {
   if (nextIndex >= slides.length) nextIndex = 0;
   goToSlide(nextIndex);
 }, 3000);
+
+const sideCarouselButtons = document.querySelectorAll(
+  "[data-side-carousel-button]"
+);
+const sideSlidesContainer = document.querySelector("[data-side-slides]");
+const sideSlides = sideSlidesContainer.children;
+
+let currentSideIndex = [...sideSlides].findIndex((slide) =>
+  slide.hasAttribute("data-active")
+);
+
+function goToSlideSide(index) {
+  sideSlides[currentSideIndex].removeAttribute("data-active");
+  sideSlides[index].setAttribute("data-active", "true");
+  currentSideIndex = index;
+}
+
+sideCarouselButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    console.log("sideCarouselButtons");
+    const offset = button.dataset.sideCarouselButton === "next" ? 1 : -1;
+    let newIndex = currentSideIndex + offset;
+
+    if (newIndex < 0) newIndex = slides.length - 1;
+    if (newIndex >= slides.length) newIndex = 0;
+    goToSlideSide(newIndex);
+  });
+});
+
+setInterval(() => {
+  let nextIndex = currentSideIndex + 1;
+  if (nextIndex >= sideSlides.length) nextIndex = 0;
+  goToSlideSide(nextIndex);
+}, 3000);

@@ -1,99 +1,115 @@
-topCarousel.pug
+adCarousel.pug
 
-section.top-carousel(aria-label="Newest Photos") 
-    .carousel(data-carousel)
-        button.prev.carousel-button(title="Previous"    data-carousel-button="prev")
+section.side-carousel(aria-label="Newest Photos") 
+    .side-carousel(data-carousel)
+        button.side-prev.side-carousel-button(title="Previous"    data-side-carousel-button="prev")
             svg(width='24' height='24' viewbox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg')
                 path(d='M6.64653 3.14648L3.79303 5.99998L6.64653 8.85348L7.35353 8.14648L5.20703 5.99998L7.35353 3.85348L6.64653 3.14648Z' fill='white')
-        button.next.carousel-button(title="Next" data-carousel-button="next")
+        button.side-next.side-carousel-button(title="Next" data-side-carousel-button="next")
             svg(width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
                 path(d="M14.276 23.6093L21.8853 16L14.276 8.39062L12.3906 10.276L18.1146 16L12.3906 21.724L14.276 23.6093Z" fill="white")
-        ul(data-slides)
-            li.first.slide(data-active)
-                div.top-items
-                    ol.top-carousel__item-top Sports
-                    ol.top-carousel__item-title SPORTS BETTING
-                .bottom-items 
-                    ol.top-carousel__item-middle Bonuses, Promotions,Live  Broadcasts
-                    button.top-carousel__item-button To Sportsbook
-            li.second.slide()
-                div.top-items
-                    ol.top-carousel__item-top Casino Bonus
-                    ol.top-carousel__item-title UP TO 300$
-                .bottom-items
-                    ol.top-carousel__item-middle For Your First Deposit
-                    button.top-carousel__item-button Claim Now
-            li.thrid.slide()
-                div.top-items
-                    ol.top-carousel__item-top Sports Bonus
-                    ol.top-carousel__item-title 
-                        | WELCOME BONUS 
-                        br
-                        |GET UP TO 100$
-                .bottom-items
-                    ol.top-carousel__item-middle For sports betting
-                    button.top-carousel__item-button Claim Now
-            li.fourth.slide()
-                div.top-items
-                    ol.top-carousel__item-top Promotion
-                    ol.top-carousel__item-title 
-                        |$810 000 &amp; UP 
-                        br
-                        |BGAMING DROPS 
-                        br
-                        |JOIN FRENZY
-                .bottom-items
-                    ol.top-carousel__item-middle
-                    button.top-carousel__item-button Learn More
-            li.fifth.slide()
-                div.top-items
-                    ol.top-carousel__item-top Promotion
-                    ol.top-carousel__item-title 
-                        |$24 000 000 
-                        br
-                        |DROPS &amp; WINS 
-                        br
-                        | SLOTS
-                .bottom-items
-                    ol.top-carousel__item-middle
-                    button.top-carousel__item-button Play Now
-        div.carousel-indicators
-            each val, index in [1,2,3,4,5]
-                div.indicator(class=(index === 0 ? "active" : ""), data-slide-to=index)
-                    div.indicator-fill(class=(index === 0 ? "active" : ""))
+        ul(data-side-slides)
+            li.first.side-slide(data-active)
+                div.side-top-items
+                    .side-carousel__item-top Accumulator Insurance
+                    .side-carousel__item-title Promotion
+                .side-image-div    
+                    .side-image-div-left 
+                        p Ends in
+                        h3 252d 12h
+                    .side-image-div-right
+                        p Prize pool 
+                        h3 &infin; 
+                button.side-carousel__item-button Read More
+            li.second.side-slide()
+                div.side-top-items
+                    .side-carousel__item-top Early Victory
+                    .side-carousel__item-title Promotion
+                .side-image-div    
+                    .side-image-div-left 
+                        p Ends in
+                        h3 38d 12h
+                    .side-image-div-right
+                        p Prize pool 
+                        h3 &infin; 
+                button.side-carousel__item-button Read More
+            li.thrid.side-slide()
+                div.side-top-items
+                    .side-carousel__item-top Tie Breaker
+                    .side-carousel__item-title Promotion
+                .side-image-div    
+                    .side-image-div-left 
+                        p Ends in
+                        h3 38d 12h
+                    .side-image-div-right
+                        p Prize pool 
+                        h3 &infin; 
+                button.side-carousel__item-button Read More
+            li.fourth.side-slide()
+                div.side-top-items
+                    .side-carousel__item-top Spin-O-Mania
+                    .side-carousel__item-title Promotion
+                .side-image-div    
+                    .side-image-div-left 
+                        p Ends in
+                        h3 248d 12h
+                    .side-image-div-right
+                        p Prize pool 
+                        h3 $1 000 000 
+                button.side-carousel__item-button Read More
+            li.fifth.side-slide()
+                div.side-top-items
+                    .side-carousel__item-top Cash Cascade
+                    .side-carousel__item-title Lottery
+                .side-image-div    
+                    .side-image-div-left 
+                        p Ends in
+                        h3 7d 10h: 59
+                    .side-image-div-right
+                        p Prize pool 
+                        h3 $1 000 000 
+                button.side-carousel__item-button Read More
 
-topCarousel.scss
+
+adCarousel.scss
 
 // .top-carousel {
 // }
 $top-font-color: #6e6e70;
 $button: #ef4136;
 $button-hover-color: #d32f2f;
+$buttons-hover: #373738;
+$page-svg: #ed9f67;
 
-.carousel {
+.side-carousel {
   width: 100%;
-  height: 55vh;
+  height: 50vh;
   position: relative;
+  border-radius: 20px;
   ul {
+    border-radius: 20px;
     margin: 0;
     padding: 0;
     list-style: none;
-    .slide {
-      padding: 20px 20px 80px 20px;
+    .side-slide {
+      border-radius: 20px;
+      padding: 20px 20px 80px 40px;
       position: absolute;
       inset: 0;
       opacity: 0;
       transition: 200ms opacity ease-in-out;
       transition-delay: 200ms;
     }
-    .slide[data-active] {
+    .side-slide[data-active] {
       opacity: 1;
       z-index: 1;
       transition-delay: 0ms;
     }
     .first {
-      background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
-        url("../assets/carosul2.webp") no-repeat 100%;
+      .side-image-div {
+        background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
+          url("../assets/carosul2.webp") no-repeat 100%;
+      }
     }
     .first,
     .second,
@@ -145,239 +161,93 @@ $button-hover-color: #d32f2f;
       }
     }
     .second {
-      background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
-        url("../assets/carousl1.webp") no-repeat 100%;
-      background-size: cover;
+      .side-image-div {
+        background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
+          url("../assets/carosul2.webp") no-repeat 100%;
+      }
     }
     .thrid {
-      background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
-        url("../assets/carosul2.webp") no-repeat 100%;
-      background-size: cover;
+      .side-image-div {
+        background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
+          url("../assets/carosul2.webp") no-repeat 100%;
+      }
     }
     .fourth {
-      background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
-        url("../assets/carousl5.webp") no-repeat 100%;
-      background-size: contain;
+      .side-image-div {
+        background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
+          url("../assets/carosul2.webp") no-repeat 100%;
+      }
     }
     .fifth {
-      background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
-        url("../assets/carousl8.webp") no-repeat 100%;
-      background-size: cover;
+      .side-image-div {
+        background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
+          url("../assets/carosul2.webp") no-repeat 100%;
+      }
     }
   }
-  .carousel-button {
+  .side-carousel-button {
     position: absolute;
     z-index: 2;
-    background: none;
-    border: none;
-    font-size: 4rem;
+    background: $buttons-hover;
+    padding: 0.3rem;
     top: 50%;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
     transform: translateY(-50%);
-    color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     border-radius: 0.25rem;
-    padding: 0 0.5rem;
-    background-color: rgba(0, 0, 0, 0.1);
-    &:hover,
-    &:foucs {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 100%;
+    svg {
+      path {
+        fill: $page-svg;
+      }
+    }
+    &:hover {
       color: white;
-      background-color: rgba(0, 0, 0, 0.2);
-      outline: 1px solid black;
+      background-color: rgba(55, 55, 56, 0.8);
     }
   }
-  .carousel-button.prev {
+  .side-prev {
     left: -0.1rem;
   }
 
-  .carousel-button.next {
+  .side-next {
     right: -0.1rem;
   }
-  //   .carousel-indicators {
-  //     position: absolute; // Add this
-  //     bottom: 20px; // Position at the bottom
-  //     left: 50%; // Center horizontally
-  //     transform: translateX(-50%); // Adjust for exact centering
-  //     display: flex;
-  //     gap: 0.5rem;
-  //     z-index: 10; // Higher than slides (which are z-index: 1)
-  //     background: rgba(0, 0, 0, 0.3); // Optional: better visibility
-  //     padding: 8px; // Optional: spacing around dots
-  //     border-radius: 12px; // Optional: rounded background
-  //     .indicator {
-  //       width: 6px;
-  //       height: 6px;
-  //       background: #555;
-  //       border-radius: 5px;
-  //       overflow: hidden;
-  //       cursor: pointer;
-  //       .indicator-fill {
-  //         background: red;
-  //         height: 100%;
-  //         width: 0%;
-  //         &.active {
-  //           width: 20px;
-  //           width: 100%;
-  //         }
-  //       }
-  //     }
-  //   }
-  .carousel-indicators {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 0.5rem;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 8px;
-    border-radius: 12px;
-
-    .indicator {
-      width: 6px;
-      height: 6px;
-      background: #555;
-      border-radius: 50%;
-      cursor: pointer;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      &.active {
-        width: 20px;
-        border-radius: 6px;
-      }
-      .indicator-fill {
-        background: red;
-        height: 100%;
-        width: 0%;
-        transition: width 0.3s ease;
-        &.active {
-          width: 100%;
-        }
-      }
-    }
-  }
 }
 
-main.js
 
-// const data = [
-//   {
-//     id: 1,
-//     top: "Sports",
-//     title: "SPORTS BETTING",
-//     middle: "Bonuses, Promotions,Live Broadcasts",
-//     button: "To Sportsbook",
-//     background: "",
-//   },
-//   {
-//     id: 2,
-//     top: "Casino Bonus",
-//     title: "UP TO 300$",
-//     middle: "For Your First Deposit",
-//     button: "Claim Now",
-//     background: "",
-//   },
-//   {
-//     id: 3,
-//     top: "Sports Bonus",
-//     title: "WELCOME BONUS GET UP TO 100$",
-//     middle: "For sports betting",
-//     button: "Claim Now",
-//     background: "",
-//   },
-//   {
-//     id: 4,
-//     top: "Promotion",
-//     title: "$810 000 & UP BGAMING DROPS JOIN FRENZY",
-//     middle: "",
-//     button: "Learn More",
-//     background: "",
-//   },
-//   {
-//     id: 5,
-//     top: "Promotion",
-//     title: "$24 000 000 DROPS & WINS SLOTS",
-//     middle: "",
-//     button: "Play Now",
-//     background: "",
-//   },
-// ];
+mainjs
 
-// const topCarousel = document.querySelector(".dataSlides");
 
-// data.forEach((item) => {
-//   const listItem = document.createElement("li");
-//   listItem.classList.add("slide");
-//   listItem.id = item.id;
-//   listItem.style.backgroundImage = `url(${item.background})`;
-//   listItem.style.backgroundSize = "cover";
-//   listItem.innerHTML = `
-//         <ol class="top-carousel__item-top">${item.top}</ol>
-//         <ol class="top-carousel__item-title">${item.title}</ol>
-//         <ol class="top-carousel__item-middle">${item.middle}</ol>
-//         <button class="top-carousel__item-button">${item.button}</button>
-// `;
-//   topCarousel.appendChild(listItem);
-// });
+const sideCarouselButtons = document.querySelectorAll(
+  "[data-side-carousel-button]"
+);
+const sideSlidesContainer = document.querySelector("[data-side-slides]");
+const sideSlides = sideSlidesContainer.children;
 
-// const firstSlide = topCarousel.querySelector("li");
-// if (firstSlide) {
-//     firstSlide.setAttribute("data-active", "true");
-// }
+function goToSlideSide(index) {
+  sideSlides[currentIndex].removeAttribute("data-active");
+  sideSlides[index].setAttribute("data-active", "true");
+  currentIndex = index;
+}
 
-console.log("topCarousel.pug");
-
-const buttons = document.querySelectorAll("[data-carousel-button]");
-
-buttons.forEach((button) => {
+sideCarouselButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    console.log("sideCarouselButtons");
     const offset = button.dataset.carouselButton === "next" ? 1 : -1;
-    const slides = button
-      .closest("[data-carousel]")
-      .querySelector("[data-slides]");
-    const activeSlide = slides.querySelector("[data-active]");
-    let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-    if (newIndex < 0) newIndex = slides.children.length - 1;
-    if (newIndex >= slides.children.length) newIndex = 0;
+    let newIndex = currentIndex + offset;
 
-    slides.children[newIndex].dataset.active = true;
-    delete activeSlide.dataset.active;
+    if (newIndex < 0) newIndex = slides.length - 1;
+    if (newIndex >= slides.length) newIndex = 0;
+    goToSlideSide(newIndex);
   });
 });
 
-const indicators = document.querySelectorAll(".indicator-fill");
-
-function updateIndicators(index) {
-  indicators.forEach((el, i) => {
-    el.classList.remove("active");
-    if (i === index) {
-      el.classList.add("active");
-    }
-  });
-}
-
-document.querySelectorAll("[data-slide-to]").forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    const slides = document.querySelector("[data-slides]");
-    const activeSlide = slides.querySelector("[data-active]");
-    delete activeSlide.dataset.active;
-    slides.children[index].dataset.active = true;
-    updateIndicators(index);
-  });
-});
-
-const indicatorCircle = document.querySelectorAll(".indicator");
-indicatorCircle.forEach((indicator, index) => {
-  indicator.addEventListener("click", () => {
-    indicatorCircle.forEach((i) => {
-      i.classList.remove("active");
-      i.querySelector(".indicator-fill").classList.remove("active");
-    });
-    indicator.classList.add("active");
-    indicator.querySelector(".indicator-fill").classList.add("active");
-  });
-});
-
-
-
-
+setInterval(() => {
+  let nextIndex = currentIndex + 1;
+  if (nextIndex >= sideSlides.length) nextIndex = 0;
+  goToSlideSide(nextIndex);
+}, 3000);

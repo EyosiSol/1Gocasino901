@@ -1,0 +1,146 @@
+// .top-carousel {
+// }
+$top-font-color: #6e6e70;
+$button: #ef4136;
+$button-hover-color: #d32f2f;
+$buttons-hover: #373738;
+$page-svg: #ed9f67;
+
+.side-carousel {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  border-radius: 20px;
+  ul {
+    border-radius: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    .side-slide {
+      border-radius: 20px;
+      padding: 20px 20px 80px 40px;
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: 200ms opacity ease-in-out;
+      transition-delay: 200ms;
+    }
+    .side-slide[data-active] {
+      opacity: 1;
+      z-index: 1;
+      transition-delay: 0ms;
+    }
+    .first {
+      .side-image-div {
+        height: 100%;
+        background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
+          url("../assets/carosul2.webp") no-repeat 100%;
+        background-size: cover;
+      }
+    }
+    .first,
+    .second,
+    .thrid,
+    .fourth,
+    .fifth {
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+      .top-items {
+        display: flex;
+        flex-direction: column;
+        .top-carousel__item-top {
+          font-size: 16px;
+          color: $top-font-color;
+          font-weight: 700;
+        }
+        .top-carousel__item-title {
+          font-size: 36px;
+          color: white;
+          font-weight: 700;
+        }
+      }
+      .bottom-items {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        button {
+          width: fit-content;
+          padding: 16px 64px;
+          font-size: 18px;
+          font-weight: 600;
+          background-color: $button;
+          color: white;
+          border: none;
+          cursor: pointer;
+          border-radius: 12px;
+          &:hover {
+            background-color: $button-hover-color;
+          }
+        }
+        .top-carousel__item-middle {
+          font-size: 20px;
+          color: white;
+          font-weight: 600;
+        }
+      }
+    }
+    .second {
+      .side-image-div {
+        background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
+          url("../assets/carosul2.webp") no-repeat 100%;
+      }
+    }
+    .thrid {
+      .side-image-div {
+        background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
+          url("../assets/carosul2.webp") no-repeat 100%;
+      }
+    }
+    .fourth {
+      .side-image-div {
+        background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
+          url("../assets/carosul2.webp") no-repeat 100%;
+      }
+    }
+    .fifth {
+      .side-image-div {
+        background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
+          url("../assets/carosul2.webp") no-repeat 100%;
+      }
+    }
+  }
+  .side-carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: $buttons-hover;
+    padding: 0.3rem;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 100%;
+    svg {
+      path {
+        fill: $page-svg;
+      }
+    }
+    &:hover {
+      color: white;
+      background-color: rgba(55, 55, 56, 0.8);
+    }
+  }
+  .side-prev {
+    left: -0.1rem;
+  }
+
+  .side-next {
+    right: -0.1rem;
+  }
+}
