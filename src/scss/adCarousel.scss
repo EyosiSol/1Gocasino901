@@ -1,141 +1,176 @@
-// .top-carousel {
-// }
 $top-font-color: #6e6e70;
 $button: #ef4136;
 $button-hover-color: #d32f2f;
 $buttons-hover: #373738;
 $page-svg: #ed9f67;
+$background-color: #212123;
+$sign-button: #ef4136;
 
 .side-carousel {
   width: 100%;
-  height: 50vh;
+  height: 44vh;
   position: relative;
   border-radius: 20px;
-  ul {
+  background-color: $background-color;
+
+  .side-carousel-window {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  [data-side-slides] {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    width: 100%;
+  }
+
+  .side-slide {
+    min-width: 100%;
+    height: 100%;
+    flex-shrink: 0;
     border-radius: 20px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    .side-slide {
-      border-radius: 20px;
-      padding: 20px 20px 80px 40px;
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: 200ms opacity ease-in-out;
-      transition-delay: 200ms;
-    }
-    .side-slide[data-active] {
-      opacity: 1;
-      z-index: 1;
-      transition-delay: 0ms;
-    }
-    .first {
-      .side-image-div {
-        height: 100%;
-        background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
-          url("../assets/carosul2.webp") no-repeat 100%;
-        background-size: cover;
-      }
-    }
-    .first,
-    .second,
-    .thrid,
-    .fourth,
-    .fifth {
-      background-size: cover;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    .side-top-items {
       display: flex;
       flex-direction: column;
-      height: 100%;
+      gap: 0.2em;
+
+      .side-carousel__item-top {
+        font-size: 18px;
+        color: white;
+        font-weight: 700;
+      }
+
+      .side-carousel__item-title {
+        font-size: 12px;
+        color: $top-font-color;
+        font-weight: 600;
+      }
+    }
+
+    .side-image-div {
+      display: flex;
       justify-content: space-between;
-      .top-items {
+      align-items: end;
+      padding: 6px 8px;
+      height: 100%;
+      border-radius: 12px;
+
+      .side-image-div-left {
         display: flex;
         flex-direction: column;
-        .top-carousel__item-top {
-          font-size: 16px;
+        gap: 0.2em;
+
+        h3 {
+          font-size: 22px;
+          color: $page-svg;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 14px;
           color: $top-font-color;
-          font-weight: 700;
-        }
-        .top-carousel__item-title {
-          font-size: 36px;
-          color: white;
-          font-weight: 700;
+          font-weight: 600;
         }
       }
-      .bottom-items {
+
+      .side-image-div-right {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        button {
-          width: fit-content;
-          padding: 16px 64px;
-          font-size: 18px;
-          font-weight: 600;
-          background-color: $button;
+        gap: 0.2em;
+        align-items: end;
+
+        h3 {
+          font-size: 22px;
           color: white;
-          border: none;
-          cursor: pointer;
-          border-radius: 12px;
-          &:hover {
-            background-color: $button-hover-color;
-          }
+          font-weight: 700;
         }
-        .top-carousel__item-middle {
-          font-size: 20px;
-          color: white;
+
+        p {
+          font-size: 14px;
+          color: $top-font-color;
           font-weight: 600;
         }
       }
     }
-    .second {
-      .side-image-div {
-        background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
-          url("../assets/carosul2.webp") no-repeat 100%;
-      }
-    }
-    .thrid {
-      .side-image-div {
-        background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
-          url("../assets/carosul2.webp") no-repeat 100%;
-      }
-    }
-    .fourth {
-      .side-image-div {
-        background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
-          url("../assets/carosul2.webp") no-repeat 100%;
-      }
-    }
-    .fifth {
-      .side-image-div {
-        background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1)),
-          url("../assets/carosul2.webp") no-repeat 100%;
+
+    .side-carousel__item-button {
+      background-color: $sign-button;
+      color: #fff;
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($sign-button, 10%);
       }
     }
   }
+
+  .first .side-image-div {
+    background: linear-gradient(to top, black, rgba(0, 0, 0, 0.1)),
+      url("../assets/adCarousel1.jpeg") no-repeat center;
+    background-size: cover;
+  }
+
+  .second .side-image-div {
+    background: linear-gradient(to top, black, rgba(0, 0, 0, 0.1)),
+      url("../assets/adCarousel1.jpeg") no-repeat center;
+    background-size: cover;
+  }
+
+  .thrid .side-image-div {
+    background: linear-gradient(to top, black, rgba(0, 0, 0, 0.1)),
+      url("../assets/adCarousel1.jpeg") no-repeat center;
+    background-size: cover;
+  }
+
+  .fourth .side-image-div {
+    background: linear-gradient(to top, black, rgba(0, 0, 0, 0.1)),
+      url("../assets/adCarousel3.jpeg") no-repeat center;
+    background-size: cover;
+  }
+
+  .fifth .side-image-div {
+    background: linear-gradient(to top, black, rgba(0, 0, 0, 0.1)),
+      url("../assets/adCarousel2.webp") no-repeat center;
+    background-size: cover;
+  }
+
   .side-carousel-button {
     position: absolute;
     z-index: 2;
     background: $buttons-hover;
-    padding: 0.3rem;
+    padding: 0.4rem;
     top: 50%;
     display: flex;
     justify-content: center;
-    height: fit-content;
     transform: translateY(-50%);
     cursor: pointer;
-    border-radius: 0.25rem;
-    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 100%;
-    svg {
-      path {
-        fill: $page-svg;
-      }
+    border: 1px solid rgba(124, 123, 123, 0.2);
+
+    svg path {
+      fill: $page-svg;
     }
+
     &:hover {
       color: white;
       background-color: rgba(55, 55, 56, 0.8);
     }
   }
+
   .side-prev {
     left: -0.1rem;
   }
