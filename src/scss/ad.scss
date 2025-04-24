@@ -24,7 +24,7 @@ $sign-button: #ff0000;
     border: none;
     cursor: pointer;
     &:hover {
-      background-color: darken($sign-button, 10%);
+      background-color: $sign-button;
     }
   }
 }
