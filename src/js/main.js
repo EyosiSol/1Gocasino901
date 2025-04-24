@@ -163,7 +163,6 @@ const scrollContainer = document.querySelector(".upperCards");
 const scrollLeftBtn = document.querySelector(".scroll-left");
 const scrollRightBtn = document.querySelector(".scroll-right");
 
-// Scroll amount (adjust as needed)
 const scrollAmount = 300;
 
 scrollLeftBtn.addEventListener("click", () => {
@@ -180,7 +179,6 @@ scrollRightBtn.addEventListener("click", () => {
   });
 });
 
-// Optional: Hide buttons when at scroll extremes
 function updateButtonVisibility() {
   scrollLeftBtn.style.display =
     scrollContainer.scrollLeft <= 0 ? "none" : "flex";
@@ -194,6 +192,9 @@ function updateButtonVisibility() {
 scrollContainer.addEventListener("scroll", updateButtonVisibility);
 updateButtonVisibility(); // Initial check
 
-const gamesSection = document.querySelector(".jackpot-content");
+// const gamesSection = document.querySelector(".jackpot-content");
 
+// renderGameCards(gamesData, gamesSection);
+// Initialize the carousel
+const gamesSection = document.querySelector(".jackpot-content");
 renderGameCards(gamesData, gamesSection);
