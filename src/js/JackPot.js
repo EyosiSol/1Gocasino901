@@ -89,7 +89,7 @@ export const gamesData = [
   },
   {
     id: 6,
-    title: "40 Bulky Fruits 6 Reels",
+    title: "40 Bulky Fruits 6",
     bg: "assets/40Bulky.webp",
   },
   {
