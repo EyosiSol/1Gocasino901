@@ -1,0 +1,131 @@
+$icon-color: #ed9f67;
+
+@keyframes shrinkIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lobbymain {
+  background-color: #2c2c2e;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+
+  .lobby-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #3a3a3c;
+    padding: 1.2rem;
+
+    .lobby-header-right {
+      display: flex;
+      background-color: #3a3a3c;
+      gap: 0.5rem;
+      font-size: 16px;
+      padding: 0.6rem 1.2rem;
+      align-items: center;
+      border-radius: 8px;
+    }
+
+    .lobby-header-left {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      div {
+        font-size: 14px;
+        display: flex;
+        gap: 0.2rem;
+
+        svg {
+          path {
+            fill: $icon-color;
+          }
+        }
+      }
+    }
+  }
+
+  .topwinners {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 0.7rem;
+
+    .topwinner-content {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 1rem;
+      padding: 20px 20px;
+      width: 100%;
+      scroll-snap-type: x mandatory;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .topwinner-card {
+        flex: 0 0 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+        position: relative;
+        cursor: pointer;
+        scroll-snap-align: start;
+
+        &.animate-shrink {
+          animation: shrinkIn 0.4s ease;
+        }
+
+        .topwinner-card-img {
+          img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+          }
+        }
+
+        .topwinner-card-content {
+          display: flex;
+          flex-direction: column;
+          gap: 0.1rem;
+
+          h3 {
+            font-size: 16px;
+            color: #fff;
+            font-weight: 600;
+          }
+
+          p {
+            font-size: 12px;
+            color: #b8b8b8;
+            font-weight: 400;
+          }
+        }
+
+        &:hover {
+          transform: scale(1.04);
+          z-index: 10;
+
+          .topwinner-card-img,
+          .topwinner-card-content {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+  }
+}

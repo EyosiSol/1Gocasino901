@@ -5,6 +5,8 @@ import {
   renderCards,
 } from "./JackPot.js"; // named import
 
+import { initWinnersCarousel } from "./lobby.js";
+
 // const data = [
 //   {
 //     id: 1,
@@ -211,3 +213,6 @@ jackpotgamesScrollButton.addEventListener("click", () => {
 jackpotgamesScrollButtonRight.addEventListener("click", () => {
   jackpotgamesScrollContainer.scrollBy({ left: 200, behavior: "smooth" });
 });
+
+// Initialize the winners section
+initWinnersCarousel();
