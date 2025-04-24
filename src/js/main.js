@@ -15,6 +15,8 @@ import {
 import { initNewSection } from "./currentWinner.js";
 import { initbooksofcollection } from "./booksofcollection.js";
 
+import { initGamesCarousel } from "./games.js";
+
 // const data = [
 //   {
 //     id: 1,
@@ -234,3 +236,5 @@ initLiveGameCarousel();
 initNewSection();
 
 initbooksofcollection();
+
+initGamesCarousel();

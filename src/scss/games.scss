@@ -1,0 +1,149 @@
+$background-color: #2c2c2e;
+
+.games {
+  background-color: $background-color;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+
+  .instantSection,
+  .bonusSection,
+  .megawaysSection {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 0.5rem;
+    position: relative;
+    background-color: $background-color;
+    border-radius: 16px;
+    .instant-upper,
+    .bonus-upper,
+    .megaways-upper {
+      justify-content: space-between;
+      display: flex;
+      //   padding: 0 24px 20px; // Added bottom padding
+      h3 {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+      }
+      p {
+        cursor: pointer;
+        margin: 0;
+        color: #ed9f67;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .instant-scroll-container,
+    .bonus-scroll-container,
+    .megaways-scroll-container {
+      width: 100%;
+      position: relative;
+
+      .instant-scroll-btn,
+      .bonus-scroll-btn,
+      .megaways-scroll-btn {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        opacity: 0.8;
+        svg {
+          path {
+            fill: #ed9f67;
+          }
+        }
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.9);
+          opacity: 1;
+          transform: translateY(-50%) scale(1.1);
+        }
+
+        &.left {
+          left: -20px;
+        }
+
+        &.right {
+          right: -20px;
+        }
+      }
+
+      .instant-content,
+      .bonus-content,
+      .megaways-content {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        gap: 1.2rem;
+        padding: 10px 0;
+        width: 100%;
+        // scrollbar-width: none; // Hide scrollbar in Firefox
+        -ms-overflow-style: none; // Hide scrollbar in IE
+
+        &::-webkit-scrollbar {
+          display: none; // Hide scrollbar in WebKit browsers
+        }
+
+        .games-section-card {
+          flex: 0 0 140px;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          transition: all 0.3s ease;
+          position: relative;
+          cursor: pointer;
+          scroll-snap-align: start;
+
+          img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+          }
+
+          h3 {
+            font-size: 14px;
+            text-align: center;
+            // margin: 5px 0 0;
+            color: white;
+            transition: all 0.3s ease;
+          }
+
+          &:hover {
+            transform: scale(1.1);
+            z-index: 10;
+
+            img {
+              transform: scale(1.05);
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            }
+
+            h3 {
+              opacity: 0;
+              height: 0;
+              margin: 0;
+              visibility: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+}
