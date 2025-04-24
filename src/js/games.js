@@ -134,8 +134,113 @@ export function megawaysCarousel() {
   });
 }
 
+export const providerData = [
+  {
+    id: "1",
+    amount: "8",
+    bg: "assets/playinGo.svg",
+  },
+  {
+    id: "2",
+    amount: "1",
+    bg: "assets/3OAKS.svg",
+  },
+  {
+    id: "3",
+    amount: "243",
+    bg: "assets/amusnet.svg",
+  },
+  {
+    id: "4",
+    amount: "10",
+    bg: "assets/belatra.svg",
+  },
+  {
+    id: "5",
+    money: "$365437",
+    amount: "8",
+    bg: "assets/yggdrasil.svg",
+  },
+  {
+    id: "6",
+    amount: "19",
+    bg: "assets/betsoft.svg",
+  },
+  {
+    id: "7",
+    amount: "2",
+    bg: "assets/kalamba.svg",
+  },
+  {
+    id: "8",
+    amount: "21",
+    bg: "assets/Ggames.svg",
+  },
+  {
+    id: "9",
+    amount: "1",
+    bg: "assets/foxium.svg",
+  },
+  {
+    id: "10",
+    amount: "1",
+    bg: "assets/fortune.svg",
+  },
+];
+
+function renderCards(Data, cardSection) {
+  Data.forEach((item) => {
+    const card = document.createElement("div");
+    card.classList.add("provider-card");
+
+    card.innerHTML = `
+              <img src="${item.bg}" alt="Card Background">
+              <div class="card-content">
+                  <div class="upper-element">
+                      <p>${item.amount}</p>Games
+                  </div>
+              </div>
+  
+              
+          `;
+    cardSection.appendChild(card);
+  });
+}
+
+function providerCarousel() {
+  console.log("Hi from providerCarousel");
+
+  const cardSection = document.querySelector(".provider-contents");
+
+  console.log("cardsection provide:", cardSection);
+
+  renderCards(providerData, cardSection);
+  console.log("renderCards provide:", renderCards(providerData, cardSection));
+
+  const scrollContainer = document.querySelector(".provider-contents");
+  const scrollLeftBtn = document.querySelector(".provider-button-left");
+  const scrollRightBtn = document.querySelector(".provider-button-right");
+
+  const scrollAmount = 300;
+
+  scrollLeftBtn.addEventListener("click", () => {
+    scrollContainer.scrollBy({
+      left: -scrollAmount,
+      behavior: "smooth",
+    });
+  });
+
+  scrollRightBtn.addEventListener("click", () => {
+    scrollContainer.scrollBy({
+      left: scrollAmount,
+      behavior: "smooth",
+    });
+  });
+}
+
 export function initGamesCarousel() {
   instantCarousel();
   bonusCarousel();
   megawaysCarousel();
+  providerCarousel();
 }
