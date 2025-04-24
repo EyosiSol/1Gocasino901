@@ -13,6 +13,7 @@ import {
 } from "./lobby.js";
 
 import { initNewSection } from "./currentWinner.js";
+import { initbooksofcollection } from "./booksofcollection.js";
 
 // const data = [
 //   {
@@ -231,3 +232,5 @@ initNewSectionCarousel();
 initLiveGameCarousel();
 
 initNewSection();
+
+initbooksofcollection();
