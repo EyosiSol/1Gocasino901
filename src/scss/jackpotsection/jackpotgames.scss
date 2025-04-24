@@ -1,53 +1,122 @@
 .jackpotGames {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+  position: relative;
+  .upper {
     display: flex;
-    flex-direction: column;
-    padding: 20px;
-  
-    .upper {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 24px;
+    justify-content: space-between;
+    padding: 0 24px 20px; // Added bottom padding
+    h3 {
+      font-size: 20px;
+      color: white;
+      margin: 0;
     }
-  
-    .jackpot-content {
-      width: 100%;
-      height: 100%;
+
+    p {
+      color: #ed9f67;
+      cursor: pointer;
+      margin: 0;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .scroll-container {
+    position: relative;
+    width: 100%;
+
+    .scroll-btn {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 0, 0);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 20;
       display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      opacity: 0.8;
+      svg {
+        path {
+          fill: #ed9f67;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.9);
+        opacity: 1;
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      &.left {
+        left: -20px;
+      }
+
+      &.right {
+        right: -20px;
+      }
+    }
+
+    .jackpot-content {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
       gap: 1.2rem;
-      padding: 20px 0; // Extra space for hover effects
-  
+      padding: 10px 0;
+      width: 100%;
+      scrollbar-width: none; // Hide scrollbar in Firefox
+      -ms-overflow-style: none; // Hide scrollbar in IE
+
+      &::-webkit-scrollbar {
+        display: none; // Hide scrollbar in WebKit browsers
+      }
+
       .game-card {
+        flex: 0 0 150px;
         display: flex;
         flex-direction: column;
-        flex: 0 0 150px;
         gap: 0.5rem;
         transition: all 0.3s ease;
-        position: relative; // Needed for z-index
+        position: relative;
         cursor: pointer;
-  
+        scroll-snap-align: start;
+
         img {
           width: 100%;
           height: auto;
+          aspect-ratio: 1/1;
+          object-fit: cover;
           border-radius: 8px;
           transition: transform 0.3s ease;
         }
-  
+
         h3 {
           font-size: 14px;
           text-align: center;
-          margin: 0;
+          margin: 5px 0 0;
+          color: white;
           transition: all 0.3s ease;
         }
-  
-        // Hover effects
+
         &:hover {
           transform: scale(1.1);
           z-index: 10;
-  
+
           img {
             transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
           }
-  
+
           h3 {
             opacity: 0;
             height: 0;
@@ -58,5 +127,4 @@
       }
     }
   }
-  
-  
+}

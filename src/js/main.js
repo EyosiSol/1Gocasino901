@@ -198,3 +198,16 @@ updateButtonVisibility(); // Initial check
 // Initialize the carousel
 const gamesSection = document.querySelector(".jackpot-content");
 renderGameCards(gamesData, gamesSection);
+
+const jackpotgamesScrollContainer = document.querySelector(".jackpot-content");
+const jackpotgamesScrollButton = document.querySelector(".scroll-btn.left");
+const jackpotgamesScrollButtonRight =
+  document.querySelector(".scroll-btn.right");
+
+jackpotgamesScrollButton.addEventListener("click", () => {
+  jackpotgamesScrollContainer.scrollBy({ left: -200, behavior: "smooth" });
+});
+
+jackpotgamesScrollButtonRight.addEventListener("click", () => {
+  jackpotgamesScrollContainer.scrollBy({ left: 200, behavior: "smooth" });
+});
