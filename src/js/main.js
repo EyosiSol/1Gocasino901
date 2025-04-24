@@ -5,7 +5,12 @@ import {
   renderCards,
 } from "./JackPot.js"; // named import
 
-import { initWinnersCarousel } from "./lobby.js";
+import {
+  initWinnersCarousel,
+  initPopularCarousel,
+  initNewSectionCarousel,
+  initLiveGameCarousel,
+} from "./lobby.js";
 
 // const data = [
 //   {
@@ -216,3 +221,9 @@ jackpotgamesScrollButtonRight.addEventListener("click", () => {
 
 // Initialize the winners section
 initWinnersCarousel();
+
+initPopularCarousel();
+
+initNewSectionCarousel();
+
+initLiveGameCarousel();
