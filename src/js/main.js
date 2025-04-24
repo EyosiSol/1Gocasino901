@@ -12,6 +12,8 @@ import {
   initLiveGameCarousel,
 } from "./lobby.js";
 
+import { initNewSection } from "./currentWinner.js";
+
 // const data = [
 //   {
 //     id: 1,
@@ -227,3 +229,5 @@ initPopularCarousel();
 initNewSectionCarousel();
 
 initLiveGameCarousel();
+
+initNewSection();

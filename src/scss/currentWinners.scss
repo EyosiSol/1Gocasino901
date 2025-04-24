@@ -1,0 +1,108 @@
+$background-color: #2c2c2e;
+$background-card-color: #161616;
+$bottom-font-color: #b3b2b2;
+$green-color: #04bd22;
+$blue-color: #69a5ff;
+.winnerSection {
+  width: 100%;
+  background-color: $background-color;
+  padding: 20px;
+  display: flex;
+  gap: 0.8rem;
+  .today-winner,
+  .best-odd,
+  .current-winner,
+  .today-winner,
+  .best-odd {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    h1 {
+      font-size: 16px;
+    }
+    .current-winner-container,
+    .today-winner-container,
+    .best-odd-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      .current-winner-card,
+      .today-winner-card,
+      .best-odd-card {
+        border-radius: 12px;
+        width: 100%;
+        padding: 10px;
+        background: $background-card-color;
+        display: flex;
+        gap: 0.8rem;
+        img {
+          width: 56px;
+          border-radius: 4px;
+        }
+        .winner-card-content,
+        .today-card-content,
+        .best-odd-card-content {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .winner-card-left,
+        .today-card-left,
+        .best-odd-card-left {
+          display: flex;
+          flex-direction: column;
+          gap: 0.2rem;
+          h3 {
+            font-size: 14px;
+          }
+          h5 {
+            font-size: 12px;
+            color: $bottom-font-color;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+  .today-winner {
+    .today-winner-container {
+      .today-winner-card {
+        .today-card-content {
+          .today-card-right {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            align-items: end;
+            h5:first-of-type {
+              background: $green-color;
+              padding: 2px 6px;
+              border-radius: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .best-odd {
+    .best-odd-container {
+      .best-odd-card {
+        .best-odd-card-content {
+          .best-odd-card-right {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            align-items: end;
+            h5:nth-of-type(2) {
+              background: $blue-color;
+              padding: 2px 6px;
+              border-radius: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
