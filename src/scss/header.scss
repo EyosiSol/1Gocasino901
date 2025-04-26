@@ -17,7 +17,7 @@ header {
   width: 100%;
   background-color: $background-color;
   color: $font-color;
-  padding: 4px;
+  padding: 8px;
   section {
     display: flex;
     width: 100%;
@@ -147,6 +147,7 @@ header {
       display: none; // Hide right section on screens smaller than laptop
     }
   }
+
 }
 .auth {
   display: flex;

@@ -44,12 +44,33 @@ $background-color: #2c2c2e;
       div {
         font-size: 14px;
         display: flex;
+        align-items: center;
         gap: 0.2rem;
 
         svg {
           path {
             fill: $icon-color;
           }
+        }
+      }
+    }
+    @media (max-width: 1024px) {
+      .lobby-header-left {
+        div {
+          font-size: 12px;
+          gap: 0.1rem;
+          svg {
+            width: 14px;
+            height: 14px;
+          }
+        }
+      }
+    }
+    @media (max-width: 660px) {
+      overflow: auto;
+      .div {
+        p {
+          text-align: center;
         }
       }
     }
