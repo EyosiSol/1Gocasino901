@@ -31,6 +31,9 @@ $background-color: #2c2c2e;
       padding: 0.6rem 1.2rem;
       align-items: center;
       border-radius: 8px;
+      @media (max-width: 1024px) {
+        display: none; // Hide right section on screens smaller than laptop
+      }
     }
 
     .lobby-header-left {
@@ -190,6 +193,9 @@ $background-color: #2c2c2e;
         &.right {
           right: -20px;
         }
+        @media (max-width: 1024px) {
+          display: none; // Hide right section on screens smaller than laptop
+        }
       }
       .popular-content-container {
         display: flex;
@@ -320,6 +326,9 @@ $background-color: #2c2c2e;
         &.right {
           right: -20px;
         }
+        @media (max-width: 1024px) {
+          display: none; // Hide right section on screens smaller than laptop
+        }
       }
 
       .new-content {
@@ -445,6 +454,9 @@ $background-color: #2c2c2e;
 
         &.right {
           right: -20px;
+        }
+        @media (max-width: 1024px) {
+          display: none; // Hide right section on screens smaller than laptop
         }
       }
 

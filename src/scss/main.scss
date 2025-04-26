@@ -27,7 +27,6 @@ $transition-speed: 0.3s;
 
 // /* For WebKit browsers (Chrome, Safari, Edge) */
 
-
 // ::-webkit-scrollbar {
 //   width: 12px; /* width of the vertical scrollbar */
 //   height: 12px; /* height of the horizontal scrollbar */
@@ -53,8 +52,6 @@ $transition-speed: 0.3s;
 //   scrollbar-width: auto; /* "auto" | "thin" | "none" */
 //   scrollbar-color: #888 #181818; /* thumb and track color */
 // }
-
-
 
 body {
   background: #121212;
@@ -121,5 +118,17 @@ body.menu-open {
     gap: 1.5rem;
     height: fit-content;
     z-index: 1;
+
+    @media (max-width: 1024px) {
+      display: none; // Hide right section on screens smaller than laptop
+    }
+  }
+  @media (max-width: 1024px) {
+    padding: 32px 0px;
+    .middle {
+      width: 100%;
+      margin-top: 0vh;
+      padding: 32px 12px;
+    }
   }
 }
