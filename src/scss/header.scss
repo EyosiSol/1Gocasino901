@@ -8,6 +8,9 @@ $button-hover-color: #ffffff;
 $page-svg-hover: #ed9f67;
 $page-hover: #373738;
 
+$menu-width: 280px;
+$transition-speed: 0.3s;
+
 header {
   position: fixed;
   z-index: 50;
@@ -24,6 +27,11 @@ header {
     display: flex;
     align-items: center;
     gap: 2rem;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
     .pages {
       display: flex;
       gap: 2rem;
@@ -59,7 +67,7 @@ header {
       }
     }
   }
-  .hamburger {
+  .hamburgerToggle {
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -71,6 +79,28 @@ header {
           fill: $sign-button;
         }
       }
+    }
+    transition: transform $transition-speed ease-in-out;
+    &.active {
+      display: none;
+    }
+  }
+  .hamburgerClose {
+    display: none;
+    gap: 1rem;
+    align-items: center;
+    svg {
+      cursor: pointer;
+      path {
+        fill: $icon-color;
+        &:hover {
+          fill: $sign-button;
+        }
+      }
+    }
+    transition: transform $transition-speed ease-in-out;
+    &.active {
+      display: block;
     }
   }
   .serachbar {

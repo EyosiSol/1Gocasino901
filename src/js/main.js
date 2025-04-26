@@ -238,3 +238,58 @@ initNewSection();
 initbooksofcollection();
 
 initGamesCarousel();
+
+//Hamburger Menu
+
+// hamburger-menu.js
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerToggle = document.getElementById("hamburgerToggle");
+  const hamburgerMenu = document.querySelector(".hamburgerMenu");
+  const body = document.body;
+  const hamburgerDeToggle = document.querySelector(".hamburgerClose");
+
+  hamburgerMenu.addEventListener("click", function (e) {
+    console.log("Hamburger menu clicked");
+  });
+
+  // Toggle menu function
+  function toggleMenu() {
+    hamburgerToggle.classList.toggle("active");
+    hamburgerDeToggle.classList.toggle("active");
+    hamburgerMenu.classList.toggle("active");
+    body.classList.toggle("menu-open");
+
+    // Toggle aria-expanded attribute for accessibility
+    const isExpanded = hamburgerToggle.getAttribute("aria-expanded") === "true";
+    hamburgerToggle.setAttribute("aria-expanded", !isExpanded);
+  }
+
+  // Initialize menu state
+  hamburgerToggle.setAttribute("aria-expanded", "false");
+  hamburgerToggle.setAttribute("aria-label", "Toggle menu");
+
+  // Click event for hamburger toggle
+  hamburgerToggle.addEventListener("click", function (e) {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", function (e) {
+    if (
+      hamburgerMenu.classList.contains("active") &&
+      !hamburgerMenu.contains(e.target) &&
+      e.target !== hamburgerToggle
+    ) {
+      toggleMenu();
+    }
+  });
+
+  // Close menu when pressing Escape key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && hamburgerMenu.classList.contains("active")) {
+      toggleMenu();
+      hamburgerToggle.focus();
+    }
+  });
+});
