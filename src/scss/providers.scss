@@ -40,6 +40,9 @@ $amount-color: #ed9f67;
         fill: $amount-color;
       }
     }
+    @media (max-width: 1024px) {
+      display: none; // Hide right section on screens smaller than laptop
+    }
   }
 }
 .provider-contents {

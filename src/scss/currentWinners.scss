@@ -3,12 +3,20 @@ $background-card-color: #161616;
 $bottom-font-color: #b3b2b2;
 $green-color: #04bd22;
 $blue-color: #69a5ff;
+$sign-button-hover: #d32f2f;
+
 .winnerSection {
   width: 100%;
   background-color: $background-color;
   padding: 20px;
   display: flex;
   gap: 0.8rem;
+  .sections {
+    display: none;
+    @media (max-width: 1024px) {
+      display: flex;
+    }
+  }
   .today-winner,
   .best-odd,
   .current-winner,
@@ -102,6 +110,30 @@ $blue-color: #69a5ff;
             }
           }
         }
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    .today-winner,
+    .best-odd {
+      display: none;
+    }
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    .sections {
+      display: flex;
+      h5 {
+        font-size: 12px;
+        font-weight: 300;
+        border-bottom: 2px solid #585858;
+        padding-bottom: 8px;
+        padding: 8px 6px;
+      }
+      // select the frist h5 child
+      h5:first-of-type {
+        border-bottom: 3px solid $sign-button-hover;
+        padding: 8px 6px;
       }
     }
   }

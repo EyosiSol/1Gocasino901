@@ -82,6 +82,26 @@ $page-svg: #ed9f67;
           font-weight: 600;
         }
       }
+      @media (max-width: 1024px) {
+        padding: 20px 10px 80px 10px;
+        .top-items {
+          .top-carousel__item-top {
+            font-size: 14px;
+          }
+          .top-carousel__item-title {
+            font-size: 24px;
+          }
+        }
+        .bottom-items {
+          button {
+            padding: 12px 32px;
+            font-size: 16px;
+          }
+          .top-carousel__item-middle {
+            font-size: 16px;
+          }
+        }
+      }
     }
     .second {
       background: linear-gradient(to right, $buttons-hover, rgba(0, 0, 0, 0.1)),
@@ -127,6 +147,9 @@ $page-svg: #ed9f67;
       color: white;
       background-color: rgba(55, 55, 56, 0.8);
     }
+    @media (max-width: 1024px) {
+      display: none; // Hide right section on screens smaller than laptop
+    }
   }
   .carousel-button.prev {
     left: -0.6rem;
@@ -169,5 +192,10 @@ $page-svg: #ed9f67;
         }
       }
     }
+  }
+}
+@media (max-width: 1024px) {
+  .carousel {
+    padding: 0px 24px;
   }
 }

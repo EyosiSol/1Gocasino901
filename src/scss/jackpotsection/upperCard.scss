@@ -2,7 +2,6 @@ $background-color: #373738;
 $content-background: #161616;
 $amount-color: #ed9f67;
 
-
 .upperCards-container {
   position: absolute;
   top: 30%;
@@ -25,7 +24,6 @@ $amount-color: #ed9f67;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-
     &:hover {
       background-color: rgba(0, 0, 0, 0.9);
       transform: translateY(225%) scale(1.1);
