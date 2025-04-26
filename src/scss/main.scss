@@ -13,6 +13,11 @@
 @use "booksofcollection.scss";
 @use "games.scss";
 @use "providers.scss";
+@use "hamburger.scss";
+
+$menu-width: 280px;
+$transition-speed: 0.3s;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,11 +25,66 @@
   text-decoration: none;
 }
 
+// /* For WebKit browsers (Chrome, Safari, Edge) */
+
+
+// ::-webkit-scrollbar {
+//   width: 12px; /* width of the vertical scrollbar */
+//   height: 12px; /* height of the horizontal scrollbar */
+// }
+
+// ::-webkit-scrollbar-track {
+//   background: #181818; /* color of the track */
+//   border-radius: 10px;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background: #181818; /* color of the scroll thumb */
+//   border-radius: 10px;
+//   border: 3px solid #181818; /* creates padding around thumb */
+// }
+
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #555; /* color on hover */
+// }
+
+// /* For Firefox */
+// html {
+//   scrollbar-width: auto; /* "auto" | "thin" | "none" */
+//   scrollbar-color: #888 #181818; /* thumb and track color */
+// }
+
+
+
 body {
   background: #121212;
   color: #fff;
   font-family: Lato, sans-serif;
   height: 100%;
+}
+
+body.menu-open {
+  overflow: hidden;
+
+  // Optional: add overlay
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 47; // one below the menu
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity $transition-speed ease-in-out;
+  }
+
+  &.menu-open::after {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 .contents {
